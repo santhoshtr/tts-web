@@ -11,9 +11,9 @@ RUN apt-get update && \
 
 # install dependencies
 RUN pip install --upgrade pip
-COPY ./requirements.txt /app/requirements.txt
+COPY ./requirements.txt /root/requirements.txt
 
-RUN pip install -r /app/requirements.txt
+RUN pip install -r /root/requirements.txt
 
 COPY . /root
 
