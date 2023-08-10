@@ -1,0 +1,6 @@
+{
+    "en": "tts_models/en/ljspeech/vits",
+    "de": "tts_models/deu/fairseq/vits",
+    "ml": "tts_models/mal/fairseq/vits",
+    "hi": "tts_models/hin/fairseq/vits"
+}

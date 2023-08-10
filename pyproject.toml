@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools", "wheel", "hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "tts-web"
+classifiers = ["Private :: Do Not Upload"]
+version = "0"
+requires-python = ">=3.9"
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "pydantic",
+    "jinja2",
+    "fasttext",
+    "python-dotenv",
+    "tts",
+    # These cause some compatibility issues on some systems and are not strictly necessary
+    # japanese g2p deps
+    "mecab-python3==1.0.6",
+    "unidic-lite==1.0.8",
+]
+
+
+[project.optional-dependencies]
+dev = [
+    "pip-tools",
+    "isort",
+    "black",
+    "ruff",
+    "tox",
+]
+
+
+[tool.black]
+line-length = 100
+
+[tool.ruff]
+line-length = 100
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "C",  # flake8-comprehensions
+    "B",  # flake8-bugbear
+]
+ignore = [
+    "B008",  # do not perform function calls in argument defaults
+    "C901",  # too complex
+]
